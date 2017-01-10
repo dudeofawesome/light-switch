@@ -9,3 +9,7 @@ Control your LifX lights via an ESP8266 powered light switch
 1. build and upload the software
 1. flip the switch on a new old way to control your lights
 
+## Dependencies
+
+- [esp8266-restclient](https://github.com/DaKaZ/esp8266-restclient) (included)
+
