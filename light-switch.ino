@@ -9,7 +9,7 @@
 
 #include "config.h"
 
-#define SWITCH 3
+#define SWITCH D3
 
 RestClient restClient = RestClient("api.lifx.com", 443, "E3 69 05 13 32 74 C0 37 F8 6C B8 A7 18 98 87 B7 CD DD 86 F0");
 
@@ -76,11 +76,11 @@ bool switchState = true;
 bool oldSwitchState = false;
 
 void loop() {
-  switchState = digitalRead(SWITCH) == HIGH;
+  switchState = digitalRead(SWITCH) == LOW;
 
   Serial.println(switchState);
 
-  digitalWrite(LED_BUILTIN, digitalRead(SWITCH));
+  digitalWrite(LED_BUILTIN, switchState);
 
   if (switchState != oldSwitchState) {
     Serial.println(switchState ? "Switch on" : "Switch off");
@@ -90,4 +90,4 @@ void loop() {
   delay(100);
 
   oldSwitchState = switchState;
-}
+};
